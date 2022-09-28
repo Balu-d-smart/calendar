@@ -1,0 +1,103 @@
+import java.util.Scanner;
+import java.io.*;
+class Main {
+void cal(int y,int m)
+{int days=0;
+  
+    for(int i=1;i<=12;i++)
+ { 
+     switch(i)
+      {
+    case 1:
+    System.out.println("january " + y );
+    days=31;
+    break;
+    case 2:
+    if((y%4==0 && y%100!=0) || y%400==0)
+    {System.out.println("February " + y );
+    days=29;
+     }
+    else
+    {System.out.println("February " + y);
+    days=28;}
+    break;
+    case 3:
+    System.out.println("march "  + y);
+    days=31;
+    break;
+    case 4:
+    System.out.println("apirl " + y);
+    days=30;
+    break;
+    case 5:
+    System.out.println("may " + y);
+    days=31;
+    break;
+    case 6:
+    System.out.println("june " +y );
+    days=30;
+    break;
+    case 7:
+    System.out.println("july " + y);
+    days=31;
+    break;
+    case 8:
+    System.out.println("august " + y);
+    days=31;
+    break;
+    case 9:
+    System.out.println("september " + y);
+    days=30;
+    break;
+    case 10:
+    System.out.println("october " + y);
+    days=31;
+    break;
+    case 11:
+    System.out.println("november " + y);
+    days=30;
+    break;
+    case 12:
+    System.out.println("december " + y );
+    days=31;
+    break;
+    default:
+    System.out.println("opps");
+    break;
+   }
+   System.out.println( );
+   System.out.println(" sun mon tue wen thu fri sat");
+   for (int j = 0; j < m; j++) 
+           {
+                System.out.print("    ");
+            }
+            for (int j = 1; j <= days; j++)
+            {
+                if (j < 10) 
+                {
+                    System.out.print("   " + j);
+                } else 
+                {
+                    System.out.print("  " + j);
+                }
+                if ((j + m) % 7 == 0) {
+                    System.out.println();
+                }
+            }
+            System.out.println("");
+            m = (m + days) % 7;
+   }
+ }
+ 
+
+    public static void main(String[] args) 
+    {
+       Main obj= new Main();
+        System.out.println("enter  year  ");
+       Scanner sc= new Scanner(System.in);
+      int y=sc.nextInt();
+       System.out.println("enter the starting day");
+      int m=sc.nextInt();
+      obj.cal(y,m);
+    }
+    }
